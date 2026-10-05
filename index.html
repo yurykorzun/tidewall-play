@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Tidewall</title>
+<link rel="icon" href="data:,">
+  <script type="module" crossorigin src="/tidewall-play/assets/index-B_oHAZmq.js"></script>
+  <link rel="stylesheet" crossorigin href="/tidewall-play/assets/index-Dw7brxWE.css">
+</head>
+<body>
+<div class="hud top">
+  <button id="levelsBtn">Levels</button>
+  <button id="pauseBtn" title="Pause (P)">Pause</button>
+  <div class="pill"><span>Storm</span><b id="round">1</b></div>
+  <div class="pill" id="phasePill"><b id="phase">Build</b><button id="more" hidden title="30 more seconds to build">+30s</button></div>
+  <div class="pill"><span>Budget</span><b id="budget">0</b></div>
+  <div class="pill" id="goalPill"><span id="goalLabel">Goal</span><b id="goal">100%</b></div>
+  <div class="pill roomy"><span>Income</span><b id="income">+0</b></div>
+  <div class="pill"><span id="seaLabel">Sea</span><b id="sea">-</b></div>
+  <div class="pill roomy"><span>Ground</span><b id="elev">-</b></div>
+</div>
+<div class="hud bottom">
+  <div class="row" id="tools"></div>
+  <div class="hint" id="hint"></div>
+</div>
+<div id="toast"></div>
+<div id="news" role="status"></div>
+<div id="tip"></div>
+<div id="card" class="card"></div>
+</body>
+</html>
