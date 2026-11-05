@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Tidewall</title>
+<link rel="icon" href="data:,">
+  <script type="module" crossorigin src="/tidewall-play/assets/index-B3TbrBUO.js"></script>
+  <link rel="stylesheet" crossorigin href="/tidewall-play/assets/index-B6JIIsaT.css">
+</head>
+<body>
+<div class="hud top">
+  <div class="panel mission" id="goalPill">
+    <span id="goalLabel">Goal</span><b id="goal">100%</b>
+    <div class="bar" aria-hidden="true"><i id="goalBar"></i><em id="goalMin"></em></div>
+    <small id="goalRule"></small>
+  </div>
+  <div class="panel phase" id="phasePill">
+    <span class="words"><span class="storms" id="storms"><span>Storm <b id="round">1 of 3</b></span><i id="dots" aria-hidden="true"></i></span><span id="phaseWord">Preparation</span></span>
+    <b id="phase">-</b><button id="more" hidden title="30 more seconds to build">+30s</button>
+  </div>
+  <div class="panel sea" id="seaPill">
+    <span id="seaLabel">Next storm</span><b id="sea">-</b><small id="waves"></small>
+    <small id="arrowLabel" aria-hidden="true"></small><i id="arrow" role="img"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 L19 12 H14.5 V21 H9.5 V12 H5 Z"/></svg><span>?</span></i>
+  </div>
+</div>
+<div class="hud bottom">
+  <div class="row" id="tools"></div>
+  <div class="hint" id="hint"></div>
+</div>
+<div id="toast"></div>
+<div id="alert" role="status"></div>
+<div id="news" role="status"></div>
+<div id="tip"></div>
+<div id="say" role="status"></div>
+<div id="card" class="card"></div>
+</body>
+</html>
