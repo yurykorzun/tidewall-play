@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Tidewall</title>
+<link rel="icon" href="data:,">
+  <script type="module" crossorigin src="/tidewall-play/assets/index-D7nJxuta.js"></script>
+  <link rel="stylesheet" crossorigin href="/tidewall-play/assets/index-DAbMFwQm.css">
+</head>
+<body>
+<div class="hud top">
+  <div class="lefts">
+  <div class="panel mission" id="goalPill">
+    <span id="goalLabel">Goal</span><b id="goal">100%</b>
+    <div class="bar" aria-hidden="true"><i id="goalBar"></i><em id="goalMin"></em></div>
+    <small id="goalRule"></small>
+  </div>
+  <!-- the budget, as a strategy game keeps its resources: one number at the top left, apart from the build tools -->
+  <div class="panel purse" id="budgetPill">
+    <span id="budgetLabel">Budget</span><b id="budget">0</b><b id="payMark" hidden></b><small id="buys"></small>
+    <small id="income" aria-describedby="incomeWhy"></small><em id="incomeWhy" role="tooltip"></em>
+  </div>
+  </div>
+  <!-- the middle: which storm and the clock; the next storm's forecast is behind Details, under it (tw-awz.9) -->
+  <div class="mid" id="mid">
+  <div class="panel phase" id="phasePill">
+    <span class="words"><span class="storms" id="storms"><span>Storm <b id="round">1 of 3</b></span><i id="dots" aria-hidden="true"></i></span><span id="phaseWord">Preparation</span></span>
+    <b id="phase">-</b><button id="more" hidden title="30 more seconds to build">+30s</button>
+    <button id="detailsBtn" aria-controls="seaPill" aria-expanded="false" title="The next storm: its peak, its waves and the way they come">Details</button>
+  </div>
+  <div class="panel sea" id="seaPill" hidden>
+    <span id="seaLabel">Next storm</span><b id="sea">-</b><small id="waves"></small>
+    <small id="arrowLabel" aria-hidden="true"></small><i id="arrow" role="img"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 L19 12 H14.5 V21 H9.5 V12 H5 Z"/></svg><span>?</span></i>
+  </div>
+  </div>
+  <button id="pauseBtn" class="panel" title="Pause (P or Esc): the sea and the clock stand still"><kbd>P</kbd><span>Pause</span></button>
+</div>
+<!-- the bottom corners: the tool tray at the left (its help line over the tiles), Start storm or speed at the right -->
+<div class="hud bottom">
+  <div class="tray" id="tray">
+    <div class="hint" id="hint"></div>
+    <div class="row" id="tools"></div>
+  </div>
+  <div class="end" id="end"><button id="go" class="go">Start storm</button><button id="speed" hidden><span>1x<small>Speed</small></span></button></div>
+</div>
+<div id="toast"></div>
+<div id="alert" role="status"></div>
+<div id="news" role="status"></div>
+<div id="tip"></div>
+<div id="say" role="status"></div>
+<div id="card" class="card"></div>
+</body>
+</html>
