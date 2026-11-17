@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Tidewall</title>
+<link rel="icon" href="data:,">
+  <script type="module" crossorigin src="/tidewall-play/assets/index-DJzHkORA.js"></script>
+  <link rel="stylesheet" crossorigin href="/tidewall-play/assets/index-DNdJsnlZ.css">
+</head>
+<body>
+<div class="hud top">
+  <div class="lefts">
+  <div class="panel mission" id="goalPill">
+    <span id="goalLabel">Goal</span><b id="goal">100%</b>
+    <div class="bar" aria-hidden="true"><i id="goalBar"></i><em id="goalMin"></em></div>
+    <small id="goalShort"></small>
+  </div>
+  <!-- the budget, as a strategy game keeps its resources: one number at the top left, apart from the build tools -->
+  <div class="panel purse" id="budgetPill">
+    <img id="budgetIcon" alt="" aria-hidden="true"><span id="budgetLabel">Budget</span><b id="budget">0</b><b id="payMark" hidden></b><small id="buys"></small>
+  </div>
+  </div>
+  <!-- the middle: the storm pill, which storm over the phase and the clock (or "Build at your own pace" with no clock);
+       the next storm's forecast is behind Details, under it (tw-awz.9, tw-005.5) -->
+  <div class="mid" id="mid">
+  <div class="panel phase" id="phasePill">
+    <span class="words"><span class="storms" id="storms"><span>Storm <b id="round">1 of 3</b></span><i id="dots" aria-hidden="true"></i></span><span class="now"><span id="phaseWord">Preparation</span><b id="phase">-</b></span></span>
+    <!-- +30s and Details at the right end; in a storm the sea now and how soon the peak comes, in their room (tw-awz.14) -->
+    <span class="ends"><button id="more" hidden title="30 more seconds to build">+30s</button>
+    <button id="detailsBtn" aria-controls="seaPill" aria-expanded="false" title="The next storm: its peak, its waves and the way they come; the minimum to keep and what a storm survived pays">Details</button>
+    <span class="tide" id="tide" hidden><b id="tideNow"></b><small id="tidePeak"></small></span></span>
+  </div>
+  <div class="panel sea" id="seaPill" hidden>
+    <span id="seaLabel">Next storm</span><b id="sea">-</b><small id="waves"></small>
+    <small id="arrowLabel" aria-hidden="true"></small><i id="arrow" role="img"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 L19 12 H14.5 V21 H9.5 V12 H5 Z"/></svg><span>?</span></i>
+    <!-- the level's numbers the panels no longer say in words (tw-wi6): the minimum, and what each storm survived pays -->
+    <span class="facts" id="seaFacts"><small id="goalRule"></small><small id="income" aria-describedby="incomeWhy"></small></span><em id="incomeWhy" role="tooltip"></em>
+  </div>
+  </div>
+  <!-- the top right: the Controls list and Pause, two square icon buttons (tw-005.5) -->
+  <div class="corner">
+    <button id="helpBtn" class="panel icon" aria-label="Controls" title="Controls: every mouse, touch and key input">?</button>
+    <button id="pauseBtn" class="panel icon" aria-label="Pause" title="Pause (P or Esc): the sea and the clock stand still"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="5" height="16" rx="1.5"/><rect x="14" y="4" width="5" height="16" rx="1.5"/></svg></button>
+  </div>
+</div>
+<!-- the bottom corners: the tool tray at the left (its help line over the tiles), Start storm or speed at the right -->
+<div class="hud bottom">
+  <div class="tray" id="tray">
+    <div class="hint" id="hint"></div>
+    <div class="row" id="tools"></div>
+  </div>
+  <div class="end" id="end"><button id="go" class="go">Start storm</button><button id="speed" hidden title="Storm speed: press for 1x, 3x or 10x"><span>1x<small>Speed</small></span><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 6l6 6-6 6M13 6l6 6-6 6"/></svg></button></div>
+</div>
+<div id="toast"></div>
+<div id="alert" role="status"></div>
+<div id="news" role="status"></div>
+<div id="tip"></div>
+<div id="say" role="status"></div>
+<!-- the loading card (tw-5t7.2): src/main.ts fills in the level's line, turns it into the error card if loading fails,
+     and takes it away once the first frame is drawn. Before #card, so a card the game shows stands over it -->
+<div id="boot" class="card" role="status"><div><h2>Stand by</h2><h1>Loading the coast</h1></div></div>
+<div id="card" class="card"></div>
+</body>
+</html>
